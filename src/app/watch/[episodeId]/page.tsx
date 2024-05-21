@@ -54,17 +54,9 @@ export const generateMetadata = async ({ params: { episodeId } }: WatchAnimeEpis
  * @type {Object}
  * @property {Object} params - Next.js router params
  * @property {string} params.episodeId - The episode ID
- * @property {Object} searchParams - Next.js router search params
- * @property {('embedded'|'default')} [searchParams.playerType] - The Video Player type
- * @property {string} [searchParams.server] - The server to get the video from
  */
 interface WatchAnimeEpisodePageProps {
   params: { episodeId: string }
-  searchParams: {
-    playerType?: 'embedded' | 'default',
-    server?: string,
-    [key: string]: string | string[] | undefined
-  }
 }
 
 /**
