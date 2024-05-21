@@ -2,8 +2,7 @@ interface FetchOptions extends RequestInit {
   body?: string;
 }
 
-// const API_BASE_URL = process.env.CONSUMET_API_BASE_URL;
-const API_BASE_URL = process.env.NEXT_PUBLIC_CONSUMET_API_BASE_URL;
+const API_BASE_URL = process.env.CONSUMET_API_BASE_URL;
 
 interface FetchParams {
   endpoint: string;
