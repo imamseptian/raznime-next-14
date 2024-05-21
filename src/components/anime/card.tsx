@@ -8,9 +8,9 @@ import {
   type TopAiringAnime,
   type Anime,
 } from "@/lib/types/anime";
-import AnimeDetailTooltip from "@/components/anime/detail-tooltip/tooltip";
 import CustomTooltip from "@/components/custom-tooltip";
 import Link, { LinkProps } from "next/link";
+import AnimeDetailTooltip from '@/components/anime/tooltip';
 import MotionDiv from '../framer/motion-div';
 
 interface AnimeCardProps extends LinkProps {

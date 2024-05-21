@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
 import CustomTooltip from '@/components/custom-tooltip';
-import AnimeDetailTooltip from '@/components/anime/detail-tooltip/tooltip';
+import AnimeDetailTooltip from '@/components/anime/tooltip';
 import { Skeleton } from '@/components/ui/skeleton';
 import { withLoader } from '@/components/hocs/with-loader';
 
