@@ -1,0 +1,47 @@
+{
+  "extends": ["next/core-web-vitals", "airbnb", "airbnb-typescript"],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "plugins": ["align-assignments"],
+  "rules": {
+    // to align json keys
+    "key-spacing": [
+      "warn",
+      {
+        "align": {
+          "beforeColon": true,
+          "afterColon": true,
+          "on": "colon"
+        }
+      }
+    ],
+    "@typescript-eslint/quotes": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-props-no-spreading": "off",
+    "import/prefer-default-export": "off",
+    "no-multi-spaces": "off",
+    // for variable alignment
+    "align-assignments/align-assignments": "warn",
+    "react/require-default-props": "off",
+    "max-len": "off",
+    "@typescript-eslint/no-use-before-define": "off",
+    "indent": [
+      "error",
+      2,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "react/jsx-curly-spacing": [
+      "warn",
+      {
+        "when": "always",
+        "children": true,
+        "spacing": {
+          "objectLiterals": "never"
+        }
+      }
+    ]
+  }
+}
