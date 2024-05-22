@@ -1,24 +1,24 @@
-# Raznime
+# Raznime: Anime Streaming Website with Next.js 14
 
-Anime streaming website with next-14, [powered by Consumet Api](https://github.com/consumet/api.consumet.org)
+Raznime is an anime streaming website built with Next.js 14, powered by the [Consumet API](https://github.com/consumet/api.consumet.org). It provides a user-friendly platform for streaming and exploring a wide range of anime content.
 
-### Demo: https://raznime-next-14.vercel.app
+### Demo
 
-![Desktop](./public/images/desktop1.png)
-![Desktop2](./public/images/desktop2.png)
+Check out the live demo: [https://raznime-next-14.vercel.app](https://raznime-next-14.vercel.app)
+
+![Desktop View 1](./public/images/desktop1.png)
+![Desktop View 2](./public/images/desktop2.png)
 
 <table>
   <tr>
-    <td><img src="./public/images/mobile1.png" alt="Image 1"></td>
-    <td><img src="./public/images/mobile2.png" alt="Image 2"></td>
+    <td><img src="./public/images/mobile1.png" alt="Mobile View 1"></td>
+    <td><img src="./public/images/mobile2.png" alt="Mobile View 2"></td>
   </tr>
 </table>
 
-This is the frontend part of an anime streaming website built with Next.js 14. It provides a user-friendly platform for streaming and exploring a wide range of anime content.
+**Note:** This project is the frontend part only. For the backend, it uses the [Consumet API](https://github.com/consumet/api.consumet.org), so when setting up this project, you need to add the Consumet API endpoint to your `.env` file.
 
-**Note:** This project is the frontend part only. For the backend, this project uses [CONSUMET API](https://github.com/consumet/api.consumet.org), so when setting up this project you need to add the CONSUMET API endpoint to your `.env` file.
-
-⚠️ **Please Note: This project is still under active development. Some features may be incomplete or subject to change. Use it for demonstration purposes, but be aware that it's a work in progress.**
+⚠️ **Please Note:** This project is still under active development. Some features may be incomplete or subject to change. Use it for demonstration purposes, but be aware that it's a work in progress.
 
 ## Table of Contents
 
@@ -43,7 +43,7 @@ npm install
 CONSUMET_API_BASE_URL=your_consumet_api_url
 ```
 
-For local setup or host your own Consumet Api, you can take a look at [CONSUMET API](https://github.com/consumet/api.consumet.org)
+For local setup or to host your own Consumet API, you can take a look at the [Consumet API Repository](https://github.com/consumet/api.consumet.org)
 
 5. Start the development server:
 
@@ -55,7 +55,7 @@ Open [http://localhost:3005](http://localhost:3005) with your browser to see the
 
 ## Features
 
-- **Dark and Light Theme**: This website support both light and dark theme.
+- **Dark and Light Theme**: This website supports both light and dark themes.
 - **Search and Global Search Field**: Search for your favorite anime by title or keywords.
 - **Infinite Scroll**: We are using infinite scroll instead of pagination for this website.
 - **Pages that provide ton of animes based on**:
@@ -63,14 +63,14 @@ Open [http://localhost:3005](http://localhost:3005) with your browser to see the
   - **Popular Anime**
   - **Top airing anime**
   - **Anime by genre**
-- **Multi streaming server**, in episode video player page we provide multiple streaming server that we got from `consumet/gogoanime`. So in case a streaming server currently experiencing a problem. You can switch to another server
-- **Download**, in case you want to enjoy watching anime later, we also provide download link that we got from `consumet/gogoanime`
+- **Multi streaming server**, In the episode video player page, we provide multiple streaming servers that we got from `consumet/gogoanime`. So in case one streaming server is experiencing a problem, you can switch to another server.
+- **Download**, In case you want to enjoy watching anime later, we also provide download links that we got from `consumet/gogoanime`.
 
 ## 3rd-party APIs
 
 The following 3rd-party APIs are used in this project:
 
-- [Consumet Api](https://api.consumet.org/): Consumet provides an APIs for accessing information and links for various entertainments like movies, books, anime, etc. For more details, you can check their [GitHub Project](https://github.com/consumet/api.consumet.org)
+- [Consumet Api](https://api.consumet.org/): Consumet provides APIs for accessing information and links for various entertainment like movies, books, anime, etc. For more details, you can check their [GitHub Project](https://github.com/consumet/api.consumet.org)
 
 ## License
 
