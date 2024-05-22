@@ -53,6 +53,10 @@ const ShallowLink = forwardRef<HTMLAnchorElement, ShallowLinkProps>(
         onLinkClick();
       }
 
+      if (props.scroll && window !== undefined) {
+        window.scrollTo(0, 0);
+      }
+
       window.history.pushState(null, '', nextUrl);
     };
 

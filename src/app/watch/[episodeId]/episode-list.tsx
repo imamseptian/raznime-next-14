@@ -134,6 +134,7 @@ export function AnimeEpisodeList({ animeDetail, initialEpisodeId }: AnimeEpisode
                     query    : queryParams,
                   }}
                   onLinkClick={ () => handleLinkClick(episode.id) }
+                  scroll
                 >
                   <div className="flex justify-between items-center p-2">
                     <p className="text-sm">
