@@ -253,93 +253,111 @@ function AnimeVideoPlayer({ episodes, initialEpisodeId }: AnimeVideoPlayerProps)
         </Button>
       </div>
 
-      <div className="border">
-        <div className="flex border-b-2">
-          <div className="flex justify-center items-center px-3 border-r-2 basis-1/5 mr-3">
-            <h4 className="text-sm">Default Server</h4>
-          </div>
-
-          <div className="flex flex-wrap basis-4/5 gap-2 py-3">
-            {
-              DEFAULT_AVAILABLE_SERVERS.map((defaultServer) => {
-                const isButtonSelected = defaultServer === defaultPlayerServer && playerType === 'default';
-                return (
-                  <Button
-                    key={ `default-server-button-${defaultServer}` }
-                    type="button"
-                    variant={ isButtonSelected ? 'default' : 'outline' }
-                    className="capitalize"
-                    size="sm"
-                    onClick={ () => handleChangeServerButtonClick('default', defaultServer) }
-                  >
-                    <CirclePlay size={ 20 } className="mr-2" />
-                    { defaultServer }
-                  </Button>
-                );
-              })
-            }
-          </div>
-        </div>
-
-        {
-          animeEmbeddedPlayerLinks.length > 0 && (
-            <div className="flex border-b-2">
-              <div className="flex justify-center items-center px-3 border-r-2 basis-1/5 mr-3">
-                <h4 className="text-sm">Other Servers</h4>
-              </div>
-
-              <div className="flex flex-wrap basis-4/5 gap-2 py-3">
-                { animeEmbeddedPlayerLinks.map((otherServer) => {
-                  const isButtonSelected = otherServer.name === server && playerType === 'embedded';
+      <table className="w-full border-2 text-sm">
+        <tbody>
+          <tr className="border-b-2">
+            <th
+              className="text-sm border-r-2"
+              scope="row"
+            >
+              Default Server
+            </th>
+            <td className="flex flex-wrap gap-2 px-1 py-3">
+              {
+                DEFAULT_AVAILABLE_SERVERS.map((defaultServer) => {
+                  const isButtonSelected = defaultServer === defaultPlayerServer && playerType === 'default';
                   return (
                     <Button
-                      key={ `other-server-button-${otherServer.name}` }
+                      key={ `default-server-button-${defaultServer}` }
                       type="button"
                       variant={ isButtonSelected ? 'default' : 'outline' }
                       className="capitalize"
                       size="sm"
-                      onClick={ () => handleChangeServerButtonClick('embedded', otherServer.name) }
+                      onClick={ () => handleChangeServerButtonClick('default', defaultServer) }
                     >
-                      <CirclePlay size={ 20 } className="mr-2" />
-                      { otherServer.name }
+                      <CirclePlay
+                        size={ 15 }
+                        className="mr-2"
+                      />
+                      { defaultServer }
                     </Button>
                   );
-                }) }
-              </div>
-            </div>
-          )
-        }
+                })
+              }
+            </td>
+          </tr>
 
-        {
-          downloadLink && (
-            <div className="flex">
-              <div className="flex justify-center items-center px-3 border-r-2 basis-1/5 mr-3">
-                <h4 className="text-sm">Download</h4>
-              </div>
-
-              <div className="basis-4/5 py-3">
-                <Button
-                  type="button"
-                  variant="outline"
-                  className="capitalize"
-                  size="sm"
-                  asChild
+          {
+            animeEmbeddedPlayerLinks.length > 0 && (
+              <tr className="border-b-2">
+                <th
+                  className="text-sm border-r-2"
+                  scope="row"
                 >
-                  <Link
-                    href={ downloadLink }
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Download size={ 20 } className="mr-2" />
-                    Download
-                  </Link>
+                  Other Servers
+                </th>
+                <td className="flex flex-wrap gap-2 px-1 py-3">
+                  { animeEmbeddedPlayerLinks.map((otherServer) => {
+                    const isButtonSelected = otherServer.name === server && playerType === 'embedded';
+                    return (
+                      <Button
+                        key={ `other-server-button-${otherServer.name}` }
+                        type="button"
+                        variant={ isButtonSelected ? 'default' : 'outline' }
+                        className="capitalize"
+                        size="sm"
+                        onClick={ () => handleChangeServerButtonClick('embedded', otherServer.name) }
+                      >
+                        <CirclePlay
+                          size={ 15 }
+                          className="mr-2"
+                        />
+                        { otherServer.name }
+                      </Button>
+                    );
+                  }) }
+                </td>
+              </tr>
+            )
+          }
 
-                </Button>
-              </div>
-            </div>
-          )
-        }
-      </div>
+          {
+            downloadLink && (
+              <tr>
+                <th
+                  className="text-sm border-r-2"
+                  scope="row"
+                >
+                  Download
+                </th>
+                <td className="px-1 py-3">
+                  <Button
+                    type="button"
+                    variant="outline"
+                    className="capitalize"
+                    size="sm"
+                    asChild
+                  >
+                    <Link
+                      href={ downloadLink }
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Download
+                        size={ 15 }
+                        className="mr-2"
+                      />
+                      Download
+                    </Link>
+
+                  </Button>
+                </td>
+              </tr>
+            )
+          }
+
+        </tbody>
+      </table>
     </>
   );
 }
