@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Raznime
 
-## Getting Started
+Anime streaming website with next-14, [powered by Consumet Api](https://github.com/consumet/api.consumet.org)
 
-First, run the development server:
+### Demo: https://raznime-next-14.vercel.app
+
+![Desktop](./public/images/desktop1.png)
+![Desktop2](./public/images/desktop2.png)
+
+<table>
+  <tr>
+    <td><img src="./public/images/mobile1.png" alt="Image 1"></td>
+    <td><img src="./public/images/mobile2.png" alt="Image 2"></td>
+  </tr>
+</table>
+
+This is the frontend part of an anime streaming website built with Next.js 14. It provides a user-friendly platform for streaming and exploring a wide range of anime content.
+
+**Note:** This project is the frontend part only. For the backend, this project uses [CONSUMET API](https://github.com/consumet/api.consumet.org), so when setting up this project you need to add the CONSUMET API endpoint to your `.env` file.
+
+⚠️ **Please Note: This project is still under active development. Some features may be incomplete or subject to change. Use it for demonstration purposes, but be aware that it's a work in progress.**
+
+## Table of Contents
+
+- [Setup](#setup)
+- [Features](#features)
+- [3rd-party APIs](#3rd-party-apis)
+- [License](#license)
+
+## Setup
+
+1. Clone this project.
+2. Navigate to the project directory.
+3. Install project dependencies:
+
+```bash
+npm install
+```
+
+4. Setup `.env`
+
+```
+CONSUMET_API_BASE_URL=your_consumet_api_url
+```
+
+For local setup or host your own Consumet Api, you can take a look at [CONSUMET API](https://github.com/consumet/api.consumet.org)
+
+5. Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3005](http://localhost:3005) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Features
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **Dark and Light Theme**: This website support both light and dark theme.
+- **Search and Global Search Field**: Search for your favorite anime by title or keywords.
+- **Infinite Scroll**: We are using infinite scroll instead of pagination for this website.
+- **Pages that provide ton of animes based on**:
+  - **Recent Released Anime Episode**
+  - **Popular Anime**
+  - **Top airing anime**
+  - **Anime by genre**
+- **Multi streaming server**, in episode video player page we provide multiple streaming server that we got from `consumet/gogoanime`. So in case a streaming server currently experiencing a problem. You can switch to another server
+- **Download**, in case you want to enjoy watching anime later, we also provide download link that we got from `consumet/gogoanime`
 
-## Learn More
+## 3rd-party APIs
 
-To learn more about Next.js, take a look at the following resources:
+The following 3rd-party APIs are used in this project:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [Consumet Api](https://api.consumet.org/): Consumet provides an APIs for accessing information and links for various entertainments like movies, books, anime, etc. For more details, you can check their [GitHub Project](https://github.com/consumet/api.consumet.org)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## License
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
