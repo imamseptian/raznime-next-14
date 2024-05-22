@@ -5,7 +5,7 @@ import {
   type AnimeDetailResponse,
 } from '@/lib/types/anime';
 import { ArrowDown01, ArrowDown10, Play } from 'lucide-react';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { getAnimeIdAndEpisodeNumberFromSlug } from '@/lib/helpers/url-helpers';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -62,28 +62,12 @@ export function AnimeEpisodeList({ animeDetail, initialEpisodeId }: AnimeEpisode
     }
   }, [pathName]);
 
-  const listRef           = useRef<HTMLUListElement>(null);
-  const currentEpisodeRef = useRef<HTMLLIElement>(null);
-
-  const { episodeNumber: currentEpisodeNumber } = getAnimeIdAndEpisodeNumberFromSlug(currentEpisodeId);
-
   const [sortDir, setSortDir]         = useState<'asc' | 'desc'>('desc');
   const [episodeList, setEpisodeList] = useState(sortEpisodes(episodes, 'desc'));
 
   useEffect(() => {
     setEpisodeList(sortEpisodes(episodeList, sortDir));
   }, [sortDir]);
-
-  useEffect(() => {
-    if (currentEpisodeRef.current && listRef.current) {
-      const containerRect = listRef.current.getBoundingClientRect();
-      const elementRect   = currentEpisodeRef.current.getBoundingClientRect();
-
-      if (elementRect.top < containerRect.top || elementRect.bottom > containerRect.bottom) {
-        currentEpisodeRef.current.scrollIntoView({ behavior: 'auto', block: 'nearest' });
-      }
-    }
-  }, [episodeList, currentEpisodeNumber]);
 
   /**
    * Handles the form submission for filtering episodes based on the episode number.
@@ -130,10 +114,7 @@ export function AnimeEpisodeList({ animeDetail, initialEpisodeId }: AnimeEpisode
         <button className="sr-only" type="submit">Search</button>
       </form>
 
-      <ul
-        ref={ listRef }
-        className="w-full divide-y divide-secondary mt-3 max-h-[40vh] lg:max-h-[70vh] overflow-y-auto"
-      >
+      <ul className="w-full divide-y divide-secondary mt-3 max-h-[40vh] lg:max-h-[70vh] overflow-y-auto">
         {
           episodeList.map((episode, index) => {
             const isActive = episode.id === currentEpisodeId;
@@ -145,7 +126,6 @@ export function AnimeEpisodeList({ animeDetail, initialEpisodeId }: AnimeEpisode
             return (
               <li
                 key={ `anime-link-${episode.id}` }
-                ref={ currentEpisodeId === episode.id ? currentEpisodeRef : null }
                 className={ `${color} hover:bg-destructive hover:text-destructive-foreground p-0` }
               >
                 <ShallowLink
