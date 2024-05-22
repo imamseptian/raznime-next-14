@@ -10,6 +10,7 @@ import { useRef, useState } from 'react';
 import { RefreshCcw } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Skeleton } from '@/components/ui/skeleton';
+import { Button } from '@/components/ui/button';
 
 /**
  * Props for the NavbarSearchField component.
@@ -143,13 +144,16 @@ export default function NavbarSearchField({
               {
                 // render only first 5 results so it doesn't take too much space
                 animeResults.slice(0, 5).map((anime, index) => {
-                  const color = index % 2 === 0 ? 'bg-secondary/90 text-secondary-foreground' : 'bg-popover/90 text-popover-foreground';
+                  const listColor       = index % 2 === 0 ? 'bg-secondary/90 text-secondary-foreground' : 'bg-popover/90 text-popover-foreground';
+                  const buttonTextColor = index % 2 === 0 ? 'text-secondary-foreground' : 'text-popover-foreground';
                   return (
-                    <li className={ `${color} p-2` } key={ anime.id }>
-                      <button
+                    <li className={ `${listColor} p-2` } key={ anime.id }>
+                      <Button
                         type="button"
+                        variant="link"
                         onClick={ onItemSelect }
-                        className="text-start p-0"
+                        className={ `p-0 h-full w-full ${buttonTextColor}` }
+                        asChild
                       >
                         <Link
                           href={ `/detail/${anime.id}` }
@@ -171,8 +175,8 @@ export default function NavbarSearchField({
                               <h5 className="text-sm font-semibold mb-1 line-clamp-2">{ anime.title }</h5>
                               <span className="text-xs text-muted-foreground">
                                 <Badge
-                                  variant="outline"
-                                  className="mr-1 border border-primary uppercase text-xs"
+                                  variant="default"
+                                  className="mr-1 border uppercase"
                                 >
                                   { anime.subOrDub }
                                 </Badge>
@@ -182,7 +186,7 @@ export default function NavbarSearchField({
                             </div>
                           </div>
                         </Link>
-                      </button>
+                      </Button>
                     </li>
                   );
                 })
@@ -193,7 +197,7 @@ export default function NavbarSearchField({
 
         {
           showViewMoreButton && (
-            <div className="w-full bg-primary/90 border flex justify-center py-1 rounded-b-lg">
+            <div className="w-full bg-primary/90 text-primary-foreground border flex justify-center py-1 rounded-b-lg">
               <Link
                 href={{
                   pathname : "/search",

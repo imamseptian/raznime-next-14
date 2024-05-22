@@ -95,15 +95,16 @@ export default function ModalWrapper({
               <input type="checkbox" readOnly checked className="hide-body-scrollbar hidden" />
               <div id="modal-content" className="popup-modal overflow-y-auto max-h-[calc(100svh-1.25rem)] relative">
 
-                <button
+                <Button
                   type="button"
                   data-modal-hide="static-modal"
                   onClick={ handleCloseModal }
-                  className="absolute top-2 right-2 z-50"
+                  variant="link"
+                  className="fixed top-2 right-2 z-50 p-0"
                 >
                   <X className="mt text-popover-foreground" />
                   <span className="sr-only">Close modal</span>
-                </button>
+                </Button>
                 { children }
 
                 <div className="p-4 lg:hidden">
@@ -111,6 +112,7 @@ export default function ModalWrapper({
                     onClick={ handleCloseModal }
                     className="hover:ring-1 w-full"
                     variant="destructive"
+                    size="lg"
                   >
                     Close
                   </Button>

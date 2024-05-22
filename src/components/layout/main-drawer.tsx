@@ -59,15 +59,16 @@ export default function MainDrawer() {
               Object.keys(NAVIGATION_LINKS).map((key) => (
                 <li
                   key={ `navbar-link-${NAVIGATION_LINKS[key].value}` }
-                  className="p-2 border-y hover:bg-muted hover:text-muted-foreground"
+                  className="p-2 border-y hover:bg-muted hover:text-muted-foreground "
                 >
                   <DrawerClose asChild>
                     <Link
                       key={ `navbar-link-${NAVIGATION_LINKS[key].value}` }
                       href={ `/${NAVIGATION_LINKS[key].value}` }
-                      className="w-full"
                     >
-                      { NAVIGATION_LINKS[key].label }
+                      <p className="w-full">
+                        { NAVIGATION_LINKS[key].label }
+                      </p>
                     </Link>
                   </DrawerClose>
                 </li>

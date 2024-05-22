@@ -31,7 +31,11 @@ export default async function Homepage() {
               <div className="flex justify-between items-center p-0 my-5 ">
                 <h2 className="text-2xl font-bold">Recent Anime Episodes</h2>
 
-                <Button className="p-0" variant="link" asChild>
+                <Button
+                  className="p-0"
+                  variant="link"
+                  asChild
+                >
                   <Link
                     href="/recent-release"
                     className="text-secondary-foreground"
@@ -49,7 +53,11 @@ export default async function Homepage() {
               <div className="flex justify-between items-center p-0 my-5 ">
                 <h2 className="text-2xl font-bold">Anime Movies</h2>
 
-                <Button className="p-0" variant="link" asChild>
+                <Button
+                  className="p-0"
+                  variant="link"
+                  asChild
+                >
                   <Link
                     href="/movies"
                     className="text-secondary-foreground"

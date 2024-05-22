@@ -155,14 +155,14 @@ export function AnimeEpisodeList({ animeDetail, initialEpisodeId }: AnimeEpisode
                   }}
                   onLinkClick={ () => handleLinkClick(episode.id) }
                 >
-                  <button type="button" className="w-full flex justify-between h-full p-2">
+                  <div className="flex justify-between items-center p-2">
                     <p className="text-sm">
                       { `Episode ${episode.number}` }
                     </p>
                     {
                       isActive && <Play className="text-primary-foreground" />
                     }
-                  </button>
+                  </div>
 
                 </ShallowLink>
               </li>

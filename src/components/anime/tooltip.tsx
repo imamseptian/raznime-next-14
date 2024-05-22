@@ -71,7 +71,10 @@ function AnimeDetailContent({ currentAnimeDetail }: { currentAnimeDetail: AnimeD
           width={ 300 }
           height={ 450 }
         />
-        <Badge variant="secondary" className="absolute top-1 left-1 rounded-lg ring-1 uppercase">
+        <Badge
+          variant="default"
+          className="absolute top-1 left-1 uppercase"
+        >
           { currentAnimeDetail.subOrDub }
         </Badge>
       </div>
@@ -86,15 +89,23 @@ function AnimeDetailContent({ currentAnimeDetail }: { currentAnimeDetail: AnimeD
         <AnimeDetailTable currentAnimeDetail={ currentAnimeDetail } />
 
         <div className="flex w-full space-x-1 items-center justify-center">
-          <Button size="sm" className="text-xs text-white rounded-lg bg-[#FF9119] hover:bg-[#FF9119]/80 w-full" asChild>
+          <Button
+            size="sm"
+            className="text-xs text-white bg-[#FF9119] hover:bg-[#FF9119]/80 w-full"
+            asChild
+          >
             <Link href={ `/watch/${currentAnimeDetail.id}-episode-1` }>
               <CirclePlay className="mr-2" />
               Watch Now
             </Link>
           </Button>
 
-          { /* <AnimeDetailTable animeId={ currentAnimeDetail.id } /> */ }
-          <Button size="sm" variant="outline" className="rounded-lg text-xs" asChild>
+          <Button
+            size="sm"
+            variant="outline"
+            className="text-xs"
+            asChild
+          >
             <Link
               href={ `/detail/${currentAnimeDetail.id}` }
               scroll={ false }

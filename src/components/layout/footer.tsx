@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
-import { Button } from '../ui/button';
+import { Button } from '@/components/ui/button';
 
 export default function Footer() {
   return (
@@ -31,7 +31,7 @@ export default function Footer() {
           </div>
           <div className="flex mt-4 sm:justify-center sm:mt-0">
             <Button
-              variant="ghost"
+              variant="link"
               asChild
             >
               <Link
@@ -48,7 +48,7 @@ export default function Footer() {
             </Button>
 
             <Button
-              variant="ghost"
+              variant="link"
               asChild
             >
               <Link
@@ -65,7 +65,7 @@ export default function Footer() {
             </Button>
 
             <Button
-              variant="ghost"
+              variant="link"
               asChild
             >
               <Link

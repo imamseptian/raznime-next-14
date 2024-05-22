@@ -52,7 +52,7 @@ export default function Error({
           variant="outline"
           onClick={ reset }
         >
-          <RotateCcw className="mr-2" />
+          <RotateCcw size={ 15 } className="mr-2" />
           Try Again
         </Button>
 

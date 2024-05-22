@@ -23,22 +23,22 @@ export default function AnimeCarouselContent({ anime, index = 0 }: { anime: Anim
       className="flex-none w-full"
     >
       <div
-        className="relative bg-cover bg-no-repeat bg-center"
+        className="relative bg-cover bg-no-repeat bg-center rounded-b-lg"
         style={{
           backgroundImage: `url(${anime.image})`,
         }}
       >
-        <div className="flex items-center bg-black/80 backdrop-blur-sm p-0">
+        <div className="flex items-center bg-black/80 backdrop-blur-sm p-0 rounded-b-lg">
 
           <div className="pl-4 md:pl-8 w-full flex-shrink-1">
-            <h3 className="text-gray-400 font-bold text-lg lg:text-3xl mb-3">
+            <h3 className="text-[#FF9119] font-bold text-lg lg:text-3xl mb-3">
               { `#${index + 1} Spotlight` }
             </h3>
 
             <span className="text-gray-300 hidden md:block text-sm mb-2">
               { anime.type }
               <Badge
-                variant="secondary"
+                variant="destructive"
                 className="ml-2"
               >
                 { anime.status }
@@ -47,7 +47,7 @@ export default function AnimeCarouselContent({ anime, index = 0 }: { anime: Anim
 
             <h3 className="text-white text-lg line-clamp-2 font-bold lg:text-2xl mb-2">{ anime.title }</h3>
 
-            { anime.otherName && <h4 className="text-gray-200 hidden lg:line-clamp-2 text-md text-semibold mb-2">{ anime.otherName }</h4> }
+            { anime.otherName && <h4 className="text-gray-200 hidden lg:line-clamp-2 text-md mb-2">{ anime.otherName }</h4> }
 
             <div className="hidden lg:flex flex-wrap mb-3">
               {
@@ -57,7 +57,7 @@ export default function AnimeCarouselContent({ anime, index = 0 }: { anime: Anim
                     href={ `/genre/${genre.toLocaleLowerCase()}` }
                   >
                     <Badge
-                      variant="secondary"
+                      variant="default"
                       className="mr-1 mb-1"
                     >
                       { genre }
@@ -67,19 +67,20 @@ export default function AnimeCarouselContent({ anime, index = 0 }: { anime: Anim
               }
             </div>
 
-            <p className="hidden md:line-clamp-3 text-md text-gray-300 mb-3">
+            <p className="hidden md:line-clamp-3 text-sm text-gray-300 mb-3">
               { anime.description }
             </p>
 
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-3 items-center">
               {
                 animeFirstEpisode && (
                   <Button
-                    className="text-white text-xs px-2 rounded-sm  bg-[#FF9119] hover:bg-[#FF9119]/80 lg:text-md lg:px-4 "
+                    className="text-white text-xs bg-[#FF9119] hover:bg-[#FF9119]/80 lg:text-md"
+                    size="sm"
                     asChild
                   >
                     <Link href={ `/watch/${animeFirstEpisode.id}` }>
-                      <CirclePlay className="mr-2" />
+                      <CirclePlay size={ 15 } className="mr-1" />
                       Watch Now
                     </Link>
                   </Button>
@@ -87,8 +88,9 @@ export default function AnimeCarouselContent({ anime, index = 0 }: { anime: Anim
               }
 
               <Button
-                variant="secondary"
-                className="text-xs px-3 lg:text-md rounded-sm lg:px-4 "
+                variant="link"
+                size="sm"
+                className="text-xs text-white p-0 lg:text-md"
                 asChild
               >
                 <Link href={ `/detail/${anime.id}` }>
@@ -100,7 +102,7 @@ export default function AnimeCarouselContent({ anime, index = 0 }: { anime: Anim
 
           </div>
 
-          <div className="flex-shrink-0 overflow-hidden w-[45%] md:w-[40%] lg:w-[30%] flex justify-end lg:justify-start">
+          <div className="flex-shrink-0 overflow-hidden w-[40%] md:w-[35%] lg:w-[30%] flex justify-end lg:justify-start">
             <Image
               src={ anime.image }
               alt={ anime.title }

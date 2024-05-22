@@ -11,7 +11,7 @@ import {
 import CustomTooltip from "@/components/custom-tooltip";
 import Link, { LinkProps } from "next/link";
 import AnimeDetailTooltip from '@/components/anime/tooltip';
-import MotionDiv from '../framer/motion-div';
+import MotionDiv from '@/components/framer/motion-div';
 
 interface AnimeCardProps extends LinkProps {
   anime:
@@ -144,13 +144,13 @@ export default function AnimeCard({
             </div>
             <div className="flex flex-row-reverse w-full absolute top-1 justify-between px-1">
               { rightBadgeValue && (
-                <Badge variant="secondary" className="rounded-lg ring-1">
+                <Badge variant="default">
                   { rightBadgeValue }
                 </Badge>
               ) }
 
               { leftBadgeValue && (
-                <Badge variant="secondary" className="rounded-lg ring-1">
+                <Badge variant="destructive">
                   { leftBadgeValue }
                 </Badge>
               ) }

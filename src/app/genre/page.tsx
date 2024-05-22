@@ -38,7 +38,7 @@ export default function GenreListPage() {
   });
 
   return (
-    <div className="container pb-32">
+    <div className="container pt-5 pb-32">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {
           Object.keys(groupedAnimeGenres).map((key) => (
@@ -48,8 +48,14 @@ export default function GenreListPage() {
                 {
                   groupedAnimeGenres[key].map((genre) => (
                     <li>
-                      <Button variant="link" className="px-0" asChild>
-                        <Link href={ `/genre/${genre.id}` }>{ genre.title }</Link>
+                      <Button
+                        variant="link"
+                        className="px-0 text-primary-foreground"
+                        asChild
+                      >
+                        <Link href={ `/genre/${genre.id}` }>
+                          { genre.title }
+                        </Link>
                       </Button>
                     </li>
                   ))

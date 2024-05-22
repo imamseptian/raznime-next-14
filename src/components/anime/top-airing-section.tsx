@@ -34,20 +34,20 @@ async function AnimeTopAiringSection() {
               href={ `/watch/${anime.episodeId}` }
               scroll
             >
-              <div className="flex mb-3 rounded-lg items-start hover:scale-105">
+              <div className="flex mb-3 items-start hover:scale-105">
                 <div className="w-full max-w-[150px] basis-1/3">
-                  <div className="w-full aspect-3/4 overflow-hidden rounded-l-lg lg:rounded-lg">
+                  <div className="w-full aspect-3/4 overflow-hidden rounded-lg">
                     <Image
                       src={ anime.image }
                       alt={ anime.title }
-                      className="w-full rounded-lg"
+                      className="w-full"
                       width={ 300 }
                       height={ 400 }
                     />
                   </div>
                 </div>
 
-                <div className="w-full p-2 basis-2/3">
+                <div className="w-full px-2 basis-2/3">
                   <h5 className="text-sm font-bold line-clamp-2 text-secondary-foreground">
                     { anime.title }
                   </h5>
@@ -61,7 +61,7 @@ async function AnimeTopAiringSection() {
                           return (
                             <Badge
                               key={ `top-airing-${anime.id}-${genre}-badge` }
-                              variant="secondary"
+                              variant="default"
                             >
                               { genre }
                             </Badge>

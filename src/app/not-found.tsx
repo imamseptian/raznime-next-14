@@ -44,7 +44,6 @@ export default function NotFound() {
 
         <Button asChild>
           <Link href="/">
-
             Home page
           </Link>
         </Button>

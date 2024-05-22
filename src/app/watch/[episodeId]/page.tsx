@@ -66,7 +66,7 @@ export default async function WatchAnimeEpisodePage({
   params: { episodeId },
 }: WatchAnimeEpisodePageProps) {
   return (
-    <div className="flex flex-col lg:flex-row gap-2 w-full lg:container ">
+    <div className="flex flex-col lg:flex-row gap-2 w-full lg:container pt-3">
       <section id="video-player-section" className="basis-4/5">
         <VideoPlayerWithLoader episodeId={ episodeId } />
       </section>

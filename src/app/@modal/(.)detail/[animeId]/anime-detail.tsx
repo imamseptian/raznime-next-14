@@ -63,7 +63,7 @@ async function AnimeDetail({ animeId }: { animeId: string }) {
                   <span className="text-sm text-gray-300">
                     { currentAnimeDetail.type }
                     <Badge
-                      variant="secondary"
+                      variant="destructive"
                       className="ml-2"
                     >
                       { currentAnimeDetail.status }
@@ -82,7 +82,7 @@ async function AnimeDetail({ animeId }: { animeId: string }) {
                           href={ `/genre/${genre.toLocaleLowerCase()}` }
                         >
                           <Badge
-                            variant="secondary"
+                            variant="default"
                             className="mr-1 mb-1"
                           >
                             { genre }
@@ -97,7 +97,7 @@ async function AnimeDetail({ animeId }: { animeId: string }) {
                     showWatchNowButton && (
                       <Button
                         size="lg"
-                        className="text-white rounded-lg bg-[#FF9119] hover:bg-[#FF9119]/80 w-full md:max-w-[200px]"
+                        className="text-white bg-[#FF9119] hover:bg-[#FF9119]/80 w-full md:max-w-[200px]"
                         asChild
                       >
                         <Link href={ `/watch/${animeFirstEpisode.id}` }>

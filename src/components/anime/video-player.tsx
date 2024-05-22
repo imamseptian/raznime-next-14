@@ -253,7 +253,7 @@ function AnimeVideoPlayer({ episodes, initialEpisodeId }: AnimeVideoPlayerProps)
         </Button>
       </div>
 
-      <div className="border rounded-none lg:rounded:lg">
+      <div className="border">
         <div className="flex border-b-2">
           <div className="flex justify-center items-center px-3 border-r-2 basis-1/5 mr-3">
             <h4 className="text-sm">Default Server</h4>
@@ -268,7 +268,7 @@ function AnimeVideoPlayer({ episodes, initialEpisodeId }: AnimeVideoPlayerProps)
                     key={ `default-server-button-${defaultServer}` }
                     type="button"
                     variant={ isButtonSelected ? 'default' : 'outline' }
-                    className="capitalize rounded-sm"
+                    className="capitalize"
                     size="sm"
                     onClick={ () => handleChangeServerButtonClick('default', defaultServer) }
                   >
@@ -296,7 +296,7 @@ function AnimeVideoPlayer({ episodes, initialEpisodeId }: AnimeVideoPlayerProps)
                       key={ `other-server-button-${otherServer.name}` }
                       type="button"
                       variant={ isButtonSelected ? 'default' : 'outline' }
-                      className="capitalize rounded-sm"
+                      className="capitalize"
                       size="sm"
                       onClick={ () => handleChangeServerButtonClick('embedded', otherServer.name) }
                     >
@@ -321,7 +321,7 @@ function AnimeVideoPlayer({ episodes, initialEpisodeId }: AnimeVideoPlayerProps)
                 <Button
                   type="button"
                   variant="outline"
-                  className="capitalize rounded-sm"
+                  className="capitalize"
                   size="sm"
                   asChild
                 >

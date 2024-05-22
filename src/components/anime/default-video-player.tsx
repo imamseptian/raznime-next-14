@@ -151,10 +151,10 @@ function AnimeDefaultVideoPlayer({ source, downloadLink = '', onVideoEnded = () 
   }, [source.url]);
 
   return (
-    <div className="w-full rounded-lg">
+    <div className="w-full">
       <video
         ref={ videoRef }
-        className="w-full aspect-video rounded-none lg:rounded-t-lg"
+        className="w-full aspect-video"
         controls
         playsInline
         onEnded={ onVideoEnded }
