@@ -1,9 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    unoptimized:
-      process.env.VERCEL_ENV === "production" &&
-      process.env.VERCEL_PLAN === "free",
+    // unoptimized:
+    //   process.env.VERCEL_ENV === "production" &&
+    //   process.env.VERCEL_PLAN === "free",
+    unoptimized: true,
     remotePatterns: [
       {
         hostname: "gogocdn.net",
