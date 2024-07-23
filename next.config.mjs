@@ -1,20 +1,23 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  images : {
+  images: {
+    unoptimized:
+      process.env.VERCEL_ENV === "production" &&
+      process.env.VERCEL_PLAN === "free",
     remotePatterns: [
       {
-        hostname: 'gogocdn.net'
+        hostname: "gogocdn.net",
       },
       {
-        hostname: 'placehold.co'
-      }
-    ]
+        hostname: "placehold.co",
+      },
+    ],
   },
   logging: {
     fetches: {
-      fullUrl: true
-    }
-  }
+      fullUrl: true,
+    },
+  },
 };
 
 export default nextConfig;
