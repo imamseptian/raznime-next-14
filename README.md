@@ -1,6 +1,6 @@
 # Raznime: Anime Streaming Website with Next.js 14
 
-Raznime is an anime streaming website built with Next.js 14, powered by the [Consumet API](https://github.com/consumet/api.consumet.org). It provides a user-friendly platform for streaming and exploring a wide range of anime content.
+ritz is an anime streaming website built with Next.js 14, powered by the [Consumet API](https://github.com/consumet/api.consumet.org). It provides a user-friendly platform for streaming and exploring a wide range of anime content.
 
 ### Demo
 
